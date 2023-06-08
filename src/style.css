@@ -1,0 +1,43 @@
+* {
+    font-family: "Arial", sans-serif;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+main {
+    margin: auto;
+    width: 100vw;
+    max-width: 1000px;
+    justify-content: center;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.flair {
+    background-color: lightgray;
+    border-radius: 8px;
+    padding: 2px 7px;
+    font-size: 1.25rem;
+}
+
+.title-div  {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+}
+
+.bottom-row {
+    justify-content: space-between;
+}
+
+button {
+    width: 20px;
+}
