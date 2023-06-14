@@ -10,25 +10,29 @@
     flex-direction: column;
 }
 
-.w-100, .post-content > * {
+.w-full, .post-content > * {
     margin: auto;
     width: 100%;
     justify-content: center;
 }
 
 @media (min-width: 480px) {
-    .w-100,
+    .w-full,
     .post-content > * {
         max-width: 4800px; /* Adjust this value according to your desired phone width */
     }
 }
 
+.w-100 {
+    width: 100%;
+}
+
 .title {
-    font-size: 26pt;
+    font-size: 36pt;
 }
 
 .post-info {
-    font-size: 18pt;
+    font-size: 24pt;
     align-items: center;
 }
 
@@ -38,7 +42,7 @@
     border: none;
     width: fit-content;
     padding: 2px 7px;
-    font-size: 16pt;
+    font-size: 24pt;
     color: #858585
 }
 
@@ -49,11 +53,15 @@
 .title-div  {
     padding-top: 25px;
     padding-bottom: 30px;
-    padding-left: 20px;
+    padding-left: 40px;
 }
 
 .bottom-row {
     justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+    padding-bottom: 30px;
 }
 
 button {
@@ -64,14 +72,10 @@ button {
     background-color: transparent;
     border: none;
     border-radius: 8px;
-    height: 3rem;
-    width: fit-content;
+    height: 60px;
+    width: 60px;
     margin: 0;
     padding: 0.5rem;
-}
-
-.w-100 {
-    width: 100%;
 }
 
 .h-100 {
@@ -79,8 +83,13 @@ button {
 }
 
 .action-btns {
+    padding-top: 20px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.action-btns > button {
+    margin-left: 30px;
 }
 
 .left-bottom {
@@ -92,12 +101,53 @@ button {
 }
 
 .subreddit-name-icon {
-    font-size: 16pt;
-    margin-bottom: 10px;
-
+    font-size: 26pt;
+    margin-bottom: 15px;
+    padding-top: 30px;
 }
 
 .small-icon {
-    height: 20px;
+    height: 24px;
     margin-right: 0px;
+}
+
+.post-main {
+    border-bottom: 20px solid #F3F3F7;
+}
+
+.view-post-btn {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: inherit;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgb(242,243,247, 0.95);
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 36pt;
+    justify-content: space-between;
+}
+
+.navbar-btn {
+    border: none;
+    font-size: inherit;
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+}
+
+.acc {
+    align-content: center;
+}
+
+.nav-icon {
+    width: 100%;
 }
