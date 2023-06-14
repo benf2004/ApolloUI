@@ -24,7 +24,7 @@
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 26pt;
 }
 
 .post-info {
@@ -35,9 +35,15 @@
 .flair {
     background-color: #F2F3F7;
     border-radius: 8px;
+    border: none;
+    width: fit-content;
     padding: 2px 7px;
-    font-size: 1.25rem;
+    font-size: 16pt;
     color: #858585
+}
+
+.flair:active{
+
 }
 
 .title-div  {
@@ -59,7 +65,7 @@ button {
     border: none;
     border-radius: 8px;
     height: 3rem;
-    width: 3rem;
+    width: fit-content;
     margin: 0;
     padding: 0.5rem;
 }
@@ -86,8 +92,9 @@ button {
 }
 
 .subreddit-name-icon {
-    font-size: 1.25rem;
+    font-size: 16pt;
     margin-bottom: 10px;
+
 }
 
 .small-icon {
