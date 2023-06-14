@@ -1,8 +1,8 @@
-.orange{
+.upvote-orange{
     color: #EC682C;
 }
 
-.bg-orange {
+.bg-upvote-orange {
     background-color: #EC682C;
 }
 
@@ -27,9 +27,32 @@
 }
 
 .bg-iosblue {
-    color: #3578F7
+    background-color: #3578F7
 }
 
+.moderator-green {
+    color: #4FB34C;
+}
+
+.bg-moderator-green {
+    background-color: #4FB34C;
+}
+
+.bookmark-green {
+    color: #56BB36;
+}
+
+.bg-bookmark-green {
+    background-color: #56BB36;
+}
+
+.downvote-cobalt {
+    color: #585FDB
+}
+
+.bg-downvote-cobalt {
+    background-color: #585FDB;
+}
 
 /* make icon filters with this codepen: https://codepen.io/sosuke/pen/Pjoqqp */
 .icon-darkgray {

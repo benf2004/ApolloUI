@@ -1,5 +1,6 @@
 * {
     font-family: "Arial", sans-serif;
+    box-sizing: border-box;
 }
 
 .flex {
@@ -10,7 +11,7 @@
     flex-direction: column;
 }
 
-.w-full, .post-content > * {
+.w-full, .post-content > img {
     margin: auto;
     width: 100%;
     justify-content: center;
@@ -18,9 +19,21 @@
 
 @media (min-width: 480px) {
     .w-full,
-    .post-content > * {
+    .post-content > img {
         max-width: 4800px; /* Adjust this value according to your desired phone width */
     }
+}
+
+.post-content > p {
+    margin-left: 40px;
+    margin-right: 40px;
+    line-height: 1.2em;
+    height: 3.6em;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: 30pt;
 }
 
 .w-100 {
@@ -60,7 +73,6 @@
     justify-content: space-between;
     padding-left: 40px;
     padding-right: 40px;
-    box-sizing: border-box;
     padding-bottom: 30px;
 }
 
@@ -122,18 +134,17 @@ button {
     height: inherit;
     display: block;
     position: absolute;
-    z-index: 1;
     inset: 0;
 }
 
 .navbar {
     position: sticky;
     top: 0;
+    z-index: 3;
     background-color: rgb(242,243,247, 0.95);
-    box-sizing: border-box;
     padding: 20px;
     font-size: 36pt;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .navbar-btn {
@@ -142,6 +153,8 @@ button {
     background-color: transparent;
     height: 40px;
     width: 40px;
+    align-content: center;
+    justify-content: center;
 }
 
 .acc {
@@ -151,3 +164,44 @@ button {
 .nav-icon {
     width: 100%;
 }
+
+.right-top-icons {
+    align-content: center;
+}
+
+.search-div {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgb(242,243,247, 0.95);
+}
+
+#searchbar {
+    padding-left: 70px;
+    width: 100%;
+    z-index: 1;
+    height: 80px;
+    font-size: 36pt;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(238,238,239);
+}
+
+#searchlabel {
+    position: relative;
+}
+
+/*
+For the search icon 􀊫
+used this handy tool: https://yoksel.github.io/url-encoder/ + this stackoverflow: https://stackoverflow.com/questions/40808493/how-to-add-a-svg-icon-within-an-input
+*/
+#searchlabel:before {
+    content: "";
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3C!--Generator: Apple Native CoreSVG 232.5--%3E%3C!DOCTYPE svg%0APUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='19.082' height='19.2676'%3E%3Cg%3E%3Crect height='19.2676' opacity='0' width='19.082' x='0' y='0'/%3E%3Cpath d='M0 7.79297C0 12.0898 3.49609 15.5859 7.79297 15.5859C9.49219 15.5859 11.0449 15.0391 12.3242 14.1211L17.1289 18.9355C17.3535 19.1602 17.6465 19.2676 17.959 19.2676C18.623 19.2676 19.082 18.7695 19.082 18.1152C19.082 17.8027 18.9648 17.5195 18.7598 17.3145L13.9844 12.5098C14.9902 11.2012 15.5859 9.57031 15.5859 7.79297C15.5859 3.49609 12.0898 0 7.79297 0C3.49609 0 0 3.49609 0 7.79297ZM1.66992 7.79297C1.66992 4.41406 4.41406 1.66992 7.79297 1.66992C11.1719 1.66992 13.916 4.41406 13.916 7.79297C13.916 11.1719 11.1719 13.916 7.79297 13.916C4.41406 13.916 1.66992 11.1719 1.66992 7.79297Z' fill='%235E5E5E' fill-opacity='0.85'/%3E%3C/g%3E%3C/svg%3E%0A") center / contain no-repeat;
+}
+
