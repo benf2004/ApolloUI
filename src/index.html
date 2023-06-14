@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>Apollo UI</title>
 
-    <link href="style.css" rel="stylesheet">
-    <link href="colors.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/colors.css" rel="stylesheet">
+    <link href="styles/reset.css" rel="stylesheet">
 
 </head>
 <body>
@@ -18,16 +19,16 @@
                 <img src="image.png">
             </div>
             <div class="flex bottom-row w-100">
-                <div class="flex flex-col">
-                    <div class="subreddit-name-icon">
-                        😀 SubredditName
+                <div class="flex flex-col left-bottom">
+                    <div class="subreddit-name-icon darkgray bold">
+                        SubredditName
                     </div>
-                    <div class="post-info">
-                        ⬆️ <span class="upvotes">1</span> 💬 <span class="comments">12</span> 🕐 <span class="time">12h</span>
+                    <div class="post-info darkgray">
+                        <img class="icon-darkgray small-icon" src="icons/arrowup.svg" alt="uparrow"> <span class="upvotes">1</span> <img class="icon-darkgray small-icon" alt="downarrow" src="icons/message.svg"><span class="comments">12</span> <img class="icon-darkgray small-icon" alt="downarrow" src="icons/clock.svg"><span class="time">12h</span>
                     </div>
                 </div>
-                <div class="flex">
-                    <button class="right-btn">...</button> <button class="right-btn"><img class="h-100 icon-darkgray" src="icons/arrowup.svg"></button> <button class="right-btn">️</button>
+                <div class="flex action-btns">
+                    <button class="right-btn"><img class="h-100 w-100 icon-darkgray" src="icons/ellipsis.svg"></button> <button class="right-btn"><img class="h-100 w-100 icon-darkgray" src="icons/arrowup.svg"></button> <button class="right-btn">️<img class="h-100 w-100 icon-darkgray" src="icons/arrowdown.svg"></button>
                 </div>
             </div>
         </div>

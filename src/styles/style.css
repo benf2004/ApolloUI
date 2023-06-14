@@ -12,13 +12,24 @@
 
 .w-100, .post-content > * {
     margin: auto;
-    width: 100vw;
-    max-width: 1000px;
+    width: 100%;
     justify-content: center;
 }
 
+@media (min-width: 480px) {
+    .w-100,
+    .post-content > * {
+        max-width: 4800px; /* Adjust this value according to your desired phone width */
+    }
+}
+
 .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+.post-info {
+    font-size: 18pt;
+    align-items: center;
 }
 
 .flair {
@@ -30,7 +41,7 @@
 }
 
 .title-div  {
-    padding-top: 30px;
+    padding-top: 25px;
     padding-bottom: 30px;
     padding-left: 20px;
 }
@@ -45,14 +56,41 @@ button {
 
 .right-btn {
     background-color: transparent;
-    border: 1px solid black;
+    border: none;
     border-radius: 8px;
     height: 3rem;
     width: 3rem;
-    margin: 1rem;
+    margin: 0;
     padding: 0.5rem;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 .h-100 {
     height: 100%;
+}
+
+.action-btns {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.left-bottom {
+    justify-content: center;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.subreddit-name-icon {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.small-icon {
+    height: 20px;
+    margin-right: 0px;
 }
