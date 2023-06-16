@@ -10,63 +10,46 @@
 
 </head>
 <body>
-    <div class="navbar flex">
-        <button class="iosblue navbar-btn"><img id="backarrow" class="icon-iosblue nav-icon" src="icons/chevronleft.svg"></button>
-        <!--button class="home-btn flex acc"><span>Home</span> <img id="arrow-down" src="icons/chevrondown.svg"></button-->
-        <div class="right-top-icons flex acc">
-            <button class="navbar-btn"><img class="icon-iosblue nav-icon" src="icons/trophy.svg"></button> &nbsp;
-            <button class="navbar-btn"><img class="icon-iosblue nav-icon" src="icons/ellipsis.svg"></button>
-        </div>
-    </div>
-    <div class="search-div flex">
-        <label id="searchlabel"></label>
-        <input id="searchbar" type="text" placeholder="Search">
-    </div>
-    <main class="w-full">
-        <div class="flex flex-col post-main">
-            <!--button class="view-post-btn"></button-->
-            <div class="title-div">
-                <span class="title">Reddit moderators right now</span> &nbsp;<button class="flair">Appreciation</button>
-            </div>
-            <div class="post-content">
-                <img src="image.png">
-            </div>
-            <div class="flex bottom-row w-full">
-                <div class="flex flex-col left-bottom">
-                    <div class="subreddit-name-icon darkgray bold">
-                        ApolloWeb
-                    </div>
-                    <div class="post-info darkgray">
-                        <img class="icon-darkgray small-icon" src="icons/arrowup.svg" alt="uparrow"> <span class="upvotes">1</span> <img class="icon-darkgray small-icon" alt="downarrow" src="icons/message.svg"><span class="comments">12</span> <img class="icon-darkgray small-icon" alt="downarrow" src="icons/clock.svg"><span class="time">12h</span>
-                    </div>
-                </div>
-                <div class="flex action-btns">
-                    <button class="right-btn"><img class=" w-100 icon-darkgray" src="icons/ellipsis.svg"></button> <button class="right-btn"><img class="h-100 w-100 icon-darkgray" src="icons/arrowup.svg"></button> <button class="right-btn">️<img class="h-100 w-100 icon-darkgray" src="icons/arrowdown.svg"></button>
-                </div>
+        <div class="navbar flex">
+            <button class="iosblue navbar-btn"><img id="backarrow" class="icon-iosblue nav-icon" src="icons/chevronleft.svg"></button>
+            <!--button class="home-btn flex acc"><span>Home</span> <img id="arrow-down" src="icons/chevrondown.svg"></button-->
+            <div class="right-top-icons flex acc">
+                <button class="navbar-btn"><img class="icon-iosblue nav-icon" src="icons/trophy.svg"></button> &nbsp;
+                <button class="navbar-btn"><img class="icon-iosblue nav-icon" src="icons/ellipsis.svg"></button>
             </div>
         </div>
-        <div class="flex flex-col post-main">
-            <button class="view-post-btn"></button>
-            <div class="title-div">
-                <span class="title">Testing a bit of a longer title with more and more text yahh you betcha. Even longer.</span> &nbsp;<button class="flair">Appreciation</button>
-            </div>
-            <div class="post-content darkgray">
-                <p>It was a simple little game we each had to take turns coming up with a line that rhymed with the previous one, a pretty easy game and one that the AI should win easily. But after only six turns it came back with a line That Didn’t Rhyme, no pun intended. I’ve played this game many times with chat GPT and it will just go on and on making rhymes until I eventually stop the game.</p>
-            </div>
-            <div class="flex bottom-row w-full">
-                <div class="flex flex-col left-bottom">
-                    <div class="subreddit-name-icon darkgray bold">
-                        ApolloWeb
-                    </div>
-                    <div class="post-info darkgray">
-                        <img class="icon-darkgray small-icon" src="icons/arrowup.svg" alt="uparrow"> <span class="upvotes">1</span> <img class="icon-darkgray small-icon" alt="downarrow" src="icons/message.svg"><span class="comments">12</span> <img class="icon-darkgray small-icon" alt="downarrow" src="icons/clock.svg"><span class="time">12h</span>
-                    </div>
-                </div>
-                <div class="flex action-btns">
-                    <button class="right-btn"><img class=" w-100 icon-darkgray" src="icons/ellipsis.svg"></button> <button class="right-btn"><img class="h-100 w-100 icon-darkgray" src="icons/arrowup.svg"></button> <button class="right-btn">️<img class="h-100 w-100 icon-darkgray" src="icons/arrowdown.svg"></button>
-                </div>
-            </div>
+        <div class="search-div flex">
+            <label id="searchlabel"></label>
+            <input id="searchbar" type="text" placeholder="Search">
         </div>
-    </main>
+        <main class="w-full">
+            <template id="largeThumbnail">
+                <div class="flex flex-col post-main">
+                    <!--button class="view-post-btn"></button-->
+                    <div class="title-div">
+                        <span class="title"></span> &nbsp;<button class="flair"></button>
+                    </div>
+                    <div class="post-content">
+                        <a></a>
+                        <img src="image.png">
+                        <p class="darkgray"></p>
+                    </div>
+                    <div class="flex bottom-row w-full">
+                        <div class="flex flex-col left-bottom">
+                            <div class="subreddit-name-icon darkgray bold"><span class="subName"></span> <img class="subIcon" src="">
+                            </div>
+                            <div class="post-info darkgray">
+                                <img class="icon-darkgray small-icon" src="icons/arrowup.svg" alt="uparrow"> <span class="upvotes"></span> <img class="icon-darkgray small-icon" alt="downarrow" src="icons/message.svg"> <span class="comments"></span> <img class="icon-darkgray small-icon" alt="downarrow" src="icons/clock.svg"> <span class="time"></span>
+                            </div>
+                        </div>
+                        <div class="flex action-btns">
+                            <button class="right-btn post-options"><img class="w-100 icon-darkgray" src="icons/ellipsis.svg"></button> <button class="right-btn upvote"><img class="h-100 w-100 icon-darkgray" src="icons/arrowup.svg"></button> <button class="right-btn downvote">️<img class="h-100 w-100 icon-darkgray" src="icons/arrowdown.svg"></button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </main>
+
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
 
 .bg-upvote-orange {
     background-color: #EC682C;
+    transition: background-color 0.5s;
 }
 
 .lightorange {
@@ -52,6 +53,7 @@
 
 .bg-downvote-cobalt {
     background-color: #585FDB;
+    transition: background-color 0.5s;
 }
 
 /* make icon filters with this codepen: https://codepen.io/sosuke/pen/Pjoqqp */
