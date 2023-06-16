@@ -7,18 +7,22 @@
 <body>
 
 <div>
-Client ID
-<input type="text" id="client-id">
-</div>
+    <p>Client ID</p>
+    <p><input type="text" id="client-id"></p>
 
+    <p>Client Secret</p>
+    <p><input type="text" id="client-secret"></p>
 
-<div>
-Redirect URI
-<input type="text" id="redirect-uri" value="https://apollo.phooey.foo/src/finishedAuth">
+    <p>Redirect URI</p>
+    <p><input type="text" id="redirect-uri" value="https://apollo.phooey.foo/src/finishedAuth"></p>
+
+    <p>User Agent</p>
+    <p><input type="text" id="user-agent"></p>
 </div>
 
 <button id="authorize">Authorize</button>
 
+<script src="js/snoowrapv1.min.js"></script>
 <script src="js/api/auth.js"></script>
 <script src="js/setAuthToken.js" type="module"></script>
 </body>
