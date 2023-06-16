@@ -105,9 +105,28 @@ export default class Post {
         this.upvoteBtn.addEventListener("click", () => this.upvote())
         this.downvoteBtn.addEventListener("click", () => this.downvote())
 
+        this.ellipsisMenu = tnc.querySelector(".ellipsis")
+        this.ellipsisMenu.addEventListener("click", () => new iosMenu().openMenu())
+
 
         // Append the filled template to the document
         document.body.querySelector("main").appendChild(tnc);
+    }
+}
+
+class iosMenu {
+    openMenu() {
+        const menuTemplate = document.getElementById("iosMenu")
+        const menuClone = menuTemplate.content.cloneNode(true)
+
+        this.cancelBtn = menuClone.querySelector(".cancelButton")
+        this.cancelBtn.addEventListener("click", this.removeMenu)
+
+        document.body.querySelector("main").appendChild(menuClone)
+    }
+
+    removeMenu(){
+        document.querySelector(".iosMenu").remove()
     }
 }
 

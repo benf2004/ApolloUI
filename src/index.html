@@ -27,29 +27,73 @@
     <main class="w-full">
     </main>
 
+    <template id="iosMenu">
     <div class="iosMenu iosblue">
         <div>
             <ul class="actionList flex flex-col acc">
-                <li class="first">Upvote</li>
-                <li>Downvote</li>
-                <li>Save</li>
-                <li>Reply</li>
-                <li>username</li>
-                <li>subredditname</li>
-                <li>Hide</li>
-                <li>Hide Posts Above</li>
-                <li>Share</li>
-                <li>Share as Image...</li>
-                <li>Crosspost</li>
-                <li>Give Award</li>
-                <li>Report</li>
-                <li class="last">Remind Me In...</li>
+                <li class="first">
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/arrowup.svg"></div>
+                    <div class="menuTextItem upvote">Upvote</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/arrowdown.svg"></div>
+                    <div class="menuTextItem downvote">Downvote</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/bookmark.svg"></div>
+                    <div class="menuTextItem save">Save</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/reply.svg"></div>
+                    <div class="menuTextItem reply">Reply</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/profile.svg"></div>
+                    <div class="menuTextItem username">username</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/tag.svg"></div>
+                    <div class="menuTextItem open-subreddit">subredditname</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/eyeslash.svg"></div>
+                    <div class="menuTextItem hide">Hide</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/eyearrowup.svg"></div>
+                    <div class="menuTextItem hide-above">Hide Posts Above</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/share.svg"></div>
+                    <div class="menuTextItem share">Share</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/photo.svg"></div>
+                    <div class="menuTextItem share-image">Share as Image...</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/arrowbranch.svg"></div>
+                    <div class="menuTextItem crosspost">Crosspost</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/gift.svg"></div>
+                    <div class="menuTextItem give-award">Give Award</div>
+                </li>
+                <li>
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/flag.svg"></div>
+                    <div class="menuTextItem report">Report</div>
+                </li>
+                <li class="last">
+                    <div class="iconDiv"><img class="icon-iosblue menu-icon" src="icons/bell.svg"></div>
+                    <div class="menuTextItem remind-me-in">Remind Me In...</div>
+                </li>
             </ul>
             <ul class="cancelList flex flex-col">
                 <li class="cancelButton">Cancel</li>
             </ul>
         </div>
     </div>
+    </template>
 
     <template id="largeThumbnail">
         <div class="flex flex-col post-main">
@@ -71,7 +115,7 @@
                     </div>
                 </div>
                 <div class="flex action-btns">
-                    <button class="right-btn post-options"><img class="w-100 icon-darkgray" src="icons/ellipsis.svg"></button> <button class="right-btn upvote"><img class="h-100 w-100 icon-darkgray" src="icons/arrowup.svg"></button> <button class="right-btn downvote">️<img class="h-100 w-100 icon-darkgray" src="icons/arrowdown.svg"></button>
+                    <button class="right-btn post-options ellipsis"><img class="w-100 icon-darkgray" src="icons/ellipsis.svg"></button> <button class="right-btn upvote"><img class="h-100 w-100 icon-darkgray" src="icons/arrowup.svg"></button> <button class="right-btn downvote">️<img class="h-100 w-100 icon-darkgray" src="icons/arrowdown.svg"></button>
                 </div>
             </div>
         </div>

@@ -1,0 +1,15 @@
+<svg width="21.8189" height="22.8003" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g>
+  <title>Layer 1</title>
+  <use y="-0.26111" transform="rotate(-178.77606201171875 10.825586318969727,11.491446495056152) matrix(0.5112252107020224,0,0,0.5112252107020224,-1.4579754508665346,-1.0575237907102846) " xlink:href="#svg_5" id="svg_6"/>
+  <g id="svg_7"/>
+  <line id="svg_8" y2="17.2067" x2="17.71713" y1="16.13883" x1="16.51577" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="null" fill="none"/>
+  <line id="svg_10" y2="17.74063" x2="16.38229" y1="16.93973" x1="16.38229" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="null" fill="none"/>
+  <text style="cursor: move;" stroke="null" transform="matrix(0.6390596995290461,0,0,0.4801893479057121,4.948424436971504,10.0314168035477) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" id="svg_12" y="12.48954" x="9.3278" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">r</text>
+ </g>
+ <defs>
+  <symbol id="svg_5" width="48" viewBox="0 -960 960 960" height="48" xmlns="http://www.w3.org/2000/svg">
+   <path d="m559,-97q-18,18 -43.5,18t-43.5,-18l-375,-375q-10,-10 -13.5,-21t-3.5,-23l0,-304q0,-26 17,-43t43,-17l304,0q12,0 24,3.5t22,13.5l373,373q19,19 19,44.5t-19,44.5l-304,304zm-41,-41l304,-304l-378,-378l-304,0l0,304l378,378zm-273,-526q21,0 36.5,-15.5t15.5,-36.5q0,-21 -15.5,-36.5t-36.5,-15.5q-21,0 -36.5,15.5t-15.5,36.5q0,21 15.5,36.5t36.5,15.5zm168,370z"/>
+  </symbol>
+ </defs>
+</svg>
