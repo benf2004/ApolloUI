@@ -6,7 +6,7 @@ function authorizeUser(){
     const clientId = document.getElementById("client-id").value
     const redirectURI = document.getElementById("redirect-uri").value
     const userAgent = document.getElementById("user-agent").value
-    const clientSecret = document.getElementById("client-secret")
+    const clientSecret = document.getElementById("client-secret").value
     const state = generateUUID()
     localStorage.setItem("clientId", clientId)
     localStorage.setItem("redirectURI", redirectURI)
@@ -18,5 +18,4 @@ function authorizeUser(){
     const authUrl = `https://www.reddit.com/api/v1/authorize.compact?client_id=${clientId}&response_type=code&state=${state}&redirect_uri=${redirectURI}&duration=permanent&scope=${allScopes}`
     window.open(authUrl)
 }
-
 

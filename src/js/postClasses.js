@@ -1,5 +1,5 @@
 export default class Post {
-    constructor(title, flair, subreddit, OPUsername, upvotes, percentUpvote, commentsAmount, hoursSincePosted, postType, postContent,
+    constructor(title, flair, subreddit, OPUsername, upvotes, percentUpvote, commentsAmount, timeCreated, timeEdited, postType, postContent,
                 subredditIcon, actions) {
         this.title = title; // str
         this.flair = flair; // str
@@ -7,8 +7,9 @@ export default class Post {
         this.OPUsername = OPUsername
         this.upvotes = upvotes; // int
         this.commentsAmount = commentsAmount
-        this.percentUpvote = percentUpvote // int
-        this.hoursSincePosted = hoursSincePosted; // int
+        this.percentUpvote = percentUpvote // i1nt
+        this.timeCreated = timeCreated; // int
+        this.timeEdited = timeEdited // int
         this.postType = postType; // str: either "img", "p", "video", or "a" (maybe add poll support via browser extension?)
         this.postContent = postContent; // str (either content or url)
         this.subredditIcon = subredditIcon; // str of url
@@ -86,7 +87,7 @@ export default class Post {
         tnc.querySelector('.time').textContent = this.hoursSincePosted;
         const postContent = tnc.querySelector('.post-content');
         if (this.postType === "p") {
-            postContent.querySelector('p').textContent = this.postContent;
+            postContent.querySelector('p').innerHTML = this.postContent;
         }
         else if (this.postType === "img") {
             postContent.querySelector('img').src = this.postContent;
