@@ -95,9 +95,9 @@ export default class Post {
         else if (this.postType === "a") {
             postContent.querySelector('a').href = this.postContent;
         }
-        postContent.querySelectorAll('p, a, img').forEach(e => {
-            if (e.tagName.toLowerCase() !== this.postType) e.remove();
-        });
+       // postContent.querySelectorAll('p, a, img').forEach(e => {
+         //   if (e.tagName.toLowerCase() !== this.postType) e.remove();
+        //});
 
         this.upvoteBtn = tnc.querySelector(".upvote")
         this.upvoteIcon = this.upvoteBtn.querySelector("img")
