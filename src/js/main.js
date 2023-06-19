@@ -17,15 +17,36 @@ let sortModeFunc = {
 
 sortModeFunc[sortModeStr].then(listings => {
         console.log(listings)
-        listings.forEach(listing =>{
+        listings.forEach(listing => {
             listingToPost(listing).createLargeThumbnail()
         })
     }
 )
 
+function getPostType(postHint) {
+    if (postHint === null || postHint === undefined || postHint === "self") return "text"
+    else if (postHint.includes("video")) return "video"
+    else return postHint
+}
+
+function getPostContent(l, postType){
+    if (postType === "text"){
+        return l.selftext
+    }
+    else if (postType === "link"){
+        return l.url
+    }
+    else if (postType === "image"){
+        return l.preview.images[0].source.url
+    }
+}
+
 function listingToPost(l){
+    const postType = getPostType(l.post_hint)
+    const postContent = getPostContent(l, postType)
     return new Post (
-        l.title, l.link_flair_text, l.subreddit_name_prefixed, l.author.name, l.score, l.upvote_ratio, l.num_comments, l.created, l.edited, "p", l.selftext_html, "", new UserActions()
+        l.title, l.link_flair_text, l.subreddit.display_name, l.author.name, l.score, l.upvote_ratio, l.num_comments,
+        l.created, l.edited, postType, postContent, "", new UserActions()
     )
 }
 
