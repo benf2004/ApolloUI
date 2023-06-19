@@ -1,3 +1,5 @@
+import {host} from "../host.js";
+
 export function getInitialToken(code){
     const options = {
         code: code,
@@ -12,8 +14,7 @@ export function getInitialToken(code){
         console.log(r)
         localStorage.setItem("refreshToken", r.refreshToken)
         localStorage.setItem("accessToken", r.accessToken)
-
-        setTimeout(500, () => window.open("https://apollo.phooey.foo/src"))
+        window.location.href = `${host}/src`
     })
 }
 
