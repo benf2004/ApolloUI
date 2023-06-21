@@ -1,6 +1,6 @@
 export default class Post {
     constructor(title, flair, subreddit, OPUsername, upvotes, percentUpvote, commentsAmount, timeCreated, timeEdited, postType, postContent,
-                subredditIcon, actions, r) {
+                subredditIcon, r, id) {
         this.title = title; // str
         this.flair = flair; // str
         this.subName = subreddit; // str
@@ -13,8 +13,9 @@ export default class Post {
         this.postType = postType; // str: either "image", "link", "video", or "text"
         this.postContent = postContent; // str (either content or url)
         this.subredditIcon = subredditIcon; // str of url
-        this.actions = actions // see UserInteractions class
         this.r = r;
+        this.id = id;
+        this.actions = new UserActions(); // see UserInteractions class
     }
 
     addComments(comments){
@@ -30,12 +31,15 @@ export default class Post {
     }
 
     upvote(){
+        console.log(this)
         if (!this.actions.upvoted) {
             this.actions.upvoted = true
             this.actions.downvoted = false
+            this.r.getSubmission(this.id).upvote()
         }
         else {
             this.actions.upvoted = false
+            this.r.getSubmission(this.id).unvote()
         }
         this.updateButtonStyles()
     }
@@ -44,9 +48,11 @@ export default class Post {
         if (!this.actions.downvoted) {
             this.actions.upvoted = false
             this.actions.downvoted = true
+            this.r.getSubmission(this.id).downvote()
         }
         else {
             this.actions.downvoted = false
+            this.r.getSubmission(this.id).downvote()
         }
         this.updateButtonStyles()
     }
@@ -72,6 +78,27 @@ export default class Post {
             this.upvoteIcon.classList.remove("icon-white")
             this.upvoteBtn.classList.remove("bg-upvote-orange")
         }
+    }
+
+    doMenuFuncThenClose(func){
+        func()
+        this.cancelBtn.addEventListener("click", this.removeMenu)
+    }
+
+    createMenu() {
+        const menuTemplate = document.getElementById("iosMenu")
+        const menuClone = menuTemplate.content.cloneNode(true)
+
+        menuClone.querySelector(".upvote").addEventListener("click", () => this.upvote())
+
+        this.cancelBtn = menuClone.querySelector(".cancelButton")
+        this.cancelBtn.addEventListener("click", this.removeMenu)
+
+        document.body.querySelector("main").appendChild(menuClone)
+    }
+
+    removeMenu(){
+        document.querySelector(".iosMenu").remove()
     }
 
     createLargeThumbnail() {
@@ -110,7 +137,7 @@ export default class Post {
         this.downvoteBtn.addEventListener("click", () => this.downvote())
 
         this.ellipsisMenu = tnc.querySelector(".ellipsis")
-        this.ellipsisMenu.addEventListener("click", () => new iosMenu().openMenu())
+        this.ellipsisMenu.addEventListener("click", () => this.createMenu())
 
 
         // Append the filled template to the document
@@ -119,18 +146,9 @@ export default class Post {
 }
 
 class iosMenu {
-    openMenu() {
-        const menuTemplate = document.getElementById("iosMenu")
-        const menuClone = menuTemplate.content.cloneNode(true)
-
-        this.cancelBtn = menuClone.querySelector(".cancelButton")
-        this.cancelBtn.addEventListener("click", this.removeMenu)
-
-        document.body.querySelector("main").appendChild(menuClone)
-    }
-
-    removeMenu(){
-        document.querySelector(".iosMenu").remove()
+    constructor(id, r) {
+        this.id = id;
+        this.r = r;
     }
 }
 
