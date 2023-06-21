@@ -84,10 +84,11 @@ button {
     background-color: transparent;
     border: none;
     border-radius: 8px;
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     margin: 0;
-    padding: 0.5rem;
+    padding: 15px;
+    box-sizing: content-box;
 }
 
 .h-100 {

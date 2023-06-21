@@ -1,0 +1,7 @@
+.post-action-buttons {
+    justify-content: space-between;
+}
+
+.right-btn > img {
+    height: 100%;
+}

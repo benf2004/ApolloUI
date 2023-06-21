@@ -42,6 +42,7 @@ export default class Post {
             this.r.getSubmission(this.id).unvote()
         }
         this.updateButtonStyles()
+        this.removeMenu()
     }
 
     downvote(){
@@ -55,6 +56,11 @@ export default class Post {
             this.r.getSubmission(this.id).downvote()
         }
         this.updateButtonStyles()
+        this.removeMenu()
+    }
+
+    savePost(){
+
     }
 
     updateButtonStyles(){
@@ -90,6 +96,8 @@ export default class Post {
         const menuClone = menuTemplate.content.cloneNode(true)
 
         menuClone.querySelector(".upvote").addEventListener("click", () => this.upvote())
+        menuClone.querySelector(".downvote").addEventListener("click", () => this.downvote())
+
 
         this.cancelBtn = menuClone.querySelector(".cancelButton")
         this.cancelBtn.addEventListener("click", this.removeMenu)
@@ -98,7 +106,7 @@ export default class Post {
     }
 
     removeMenu(){
-        document.querySelector(".iosMenu").remove()
+        if (document.querySelector(".iosMenu")) document.querySelector(".iosMenu").remove()
     }
 
     createLargeThumbnail() {
