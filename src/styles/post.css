@@ -5,3 +5,13 @@
 .right-btn > img {
     height: 100%;
 }
+
+.post-title {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.post-full-content {
+    margin-left: 20px;
+    margin-right: 20px;
+}
