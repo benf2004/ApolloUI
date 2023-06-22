@@ -5,23 +5,43 @@ import {checkDefaults} from "./setDefaults.js";
 checkDefaults();
 
 const r = new snoowrap(getLocalCredentials())
+const MAX_POSTS_LOADED = 10;
+const thrityMinutes = 30 * 60000;
 
 let sortModeStr = localStorage.getItem("sortMode") ?? "best"
-let sortModeFunc = {
-    "best": r.getBest(),
-    "hot": r.getHot(),
-    "new": r.getNew(),
-    "top": r.getTop(),
-    "rising": r.getRising()
+let commonOpts = {show: "all", limit: MAX_POSTS_LOADED}
+let needNewSlice = localStorage.getItem("beforeExpires") < new Date().getTime() ?? true
+if (!needNewSlice){ // get a new slice every 30 minutes
+    commonOpts.after = localStorage.getItem("before")
 }
 
-sortModeFunc[sortModeStr].then(listings => {
+console.log({needNewSlice, commonOpts})
+
+let sortModeFunc = {
+    "best": r.getBest(commonOpts),
+    "hot": r.getHot(commonOpts),
+    "new": r.getNew(commonOpts),
+    "top": r.getTop(commonOpts),
+    "rising": r.getRising(commonOpts)
+}
+
+
+
+function getPosts() {
+    sortModeFunc[sortModeStr].then(listings => {
         console.log(listings)
-        listings.forEach(listing => {
-            listingToPost(listing).createLargeThumbnail()
-        })
-    }
-)
+            if (needNewSlice) {
+                localStorage.setItem("before", listings[MAX_POSTS_LOADED - 1].name)
+                const nowPlus30 = new Date().getTime() + thrityMinutes
+                localStorage.setItem("beforeExpires", nowPlus30.toString())
+            }
+            listings.forEach(listing => {
+                listingToPost(listing).createLargeThumbnail()
+            })
+        }
+    )
+}
+getPosts()
 
 function getPostType(postHint) {
     if (postHint === null || postHint === undefined || postHint === "self") return "text"
@@ -46,7 +66,7 @@ function listingToPost(l){
     const postContent = getPostContent(l, postType)
     return new Post (
         l.title, l.link_flair_text, l.subreddit.display_name, l.author.name, l.score, l.upvote_ratio, l.num_comments,
-        l.created, l.edited, postType, postContent, "", r, l.name, l.likes,
+        l.created, l.edited, postType, postContent, "", r, l.name, l.likes, l.visited, l.saved, l.comments
     )
 }
 

@@ -1,6 +1,6 @@
 export default class Post {
     constructor(title, flair, subreddit, OPUsername, score, percentUpvote, commentsAmount, timeCreated, timeEdited, postType, postContent,
-                subredditIcon, r, id, likes, viewed, clicked, saved) {
+                subredditIcon, r, id, likes, clicked, saved, comments) {
         this.title = title; // str
         this.flair = flair; // str
         this.subName = subreddit; // str
@@ -15,7 +15,11 @@ export default class Post {
         this.subredditIcon = subredditIcon; // str of url
         this.r = r;
         this.id = id;
-        this.actions = new UserActions(likes === true, likes === false, viewed, clicked, saved); // see UserInteractions class
+        this.actions = new UserActions(likes === true, likes === false, false, clicked, saved); // see UserInteractions class
+        comments.fetchMore({skipReplies: false, amount: 100}).then(result => {
+            this.comments = result;
+            }
+        )
     }
 
     addComments(comments){
@@ -145,11 +149,10 @@ export default class Post {
         this.ellipsisMenu = tnc.querySelector(".ellipsis")
         this.ellipsisMenu.addEventListener("click", () => this.createMenu())
 
-        this.updateButtonStyles()
-
-
         // Append the filled template to the document
         document.body.querySelector("main").appendChild(tnc);
+
+        this.updateButtonStyles()
     }
 }
 
