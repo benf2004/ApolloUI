@@ -33,7 +33,7 @@
     overflow: hidden;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    font-size: 30pt;
+    font-size: 2.5em;
 }
 
 .w-100 {
@@ -41,11 +41,11 @@
 }
 
 .title {
-    font-size: 36pt;
+    font-size: 3em;
 }
 
 .post-info {
-    font-size: 24pt;
+    font-size: 2em;
     align-items: center;
 }
 
@@ -55,7 +55,7 @@
     border: none;
     width: fit-content;
     padding: 2px 7px;
-    font-size: 24pt;
+    font-size: 2em;
     color: #858585
 }
 
@@ -114,7 +114,7 @@ button {
 }
 
 .subreddit-name-icon {
-    font-size: 26pt;
+    font-size: 2.2em;
     margin-bottom: 15px;
     padding-top: 30px;
 }
@@ -148,7 +148,7 @@ button {
     z-index: 3;
     background-color: rgb(242,243,247, 0.95);
     padding: 20px;
-    font-size: 36pt;
+    font-size: 3em;
     height: 100px;
     justify-content: space-between;
 }
@@ -185,7 +185,7 @@ button {
     width: 100%;
     z-index: 1;
     height: 80px;
-    font-size: 36pt;
+    font-size: 3em;
     border-radius: 10px;
     border: none;
     background-color: rgb(238,238,239);
