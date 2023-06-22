@@ -215,3 +215,7 @@ used this handy tool: https://yoksel.github.io/url-encoder/ + this stackoverflow
     width: 400px;
 
 }
+
+.slip-swiping-container {
+    overflow-x: hidden;
+}

@@ -1,12 +1,9 @@
-// this page is for development to more easily set up your tokens
-
-
-localStorage.setItem('mainSortMode', '');
-localStorage.setItem('refreshToken', '');
-localStorage.setItem('defaultsSet', '');
-localStorage.setItem('state', '');
-localStorage.setItem('clientSecret', '');
-localStorage.setItem('accessToken', '');
-localStorage.setItem('redirectURI', '');
-localStorage.setItem('clientId', '');
-localStorage.setItem('userAgent', '');
+localStorage.setItem('mainSortMode', 'best');
+localStorage.setItem('refreshToken', '1915638530282-_yHVd52e6u8GBeMDQF1Prplrhc1yVA');
+localStorage.setItem('defaultsSet', 'true');
+localStorage.setItem('state', '3cc0a203-e1e5-4055-9201-eb7bf7ddefdf');
+localStorage.setItem('clientSecret', 'RsTCY6-1Nl2CrWpYeItqNindINHgpw');
+localStorage.setItem('accessToken', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IlNIQTI1NjpzS3dsMnlsV0VtMjVmcXhwTU40cWY4MXE2OWFFdWFyMnpLMUdhVGxjdWNZIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjg3NDE1MDExLjUwMDA1NCwiaWF0IjoxNjg3MzI4NjExLjUwMDA1NCwianRpIjoiZWNQdDVWc2Iyc0VnelJmUDV2TF9XNHdnVkRuVjR3IiwiY2lkIjoiWXBuMHFZT0hrNDhWMzFVaV9oZF9fUSIsImxpZCI6InQyX29nMTVweHdxIiwiYWlkIjoidDJfb2cxNXB4d3EiLCJsY2EiOjE2NTQ5MTc0MzcwMDAsInNjcCI6ImVKeEVqVUVPZzBBSVJlX3kxOXlvNldKRzBKSTZZZ0J0dkgwemF0TWRmQjdfUGZEUnR3cHJnaEJsRjlDWnVCUUdvUm4zRFlRYjJTMDcwbzdZcWd1elp2VEhyY2JnV3Z0cGRkMUxTcE9JTWtsY0pZTXRvMDRnX0h0bm02NWh0Y2diRy1laWZsS3JlZGY5Z3RocU9fM0tzcVRtQWNKTEk4MFBQTDhCQUFEX184SEZReGMiLCJyY2lkIjoiTWlUY09CNW5OMnhuNFFmdGxBWHF3X2QwVVJ4bmpMbzZQb08wNENiOGpLVSIsImZsbyI6OH0.OD_SdS9eNOJ15p3Ng0IRZNObdrH3cTVt1GwI9HEUhX1KS3Oxbj4Hs3mFUYNKhZPdvLuUYyw3JH1BIn7sQ-Rq9tD56qRcB_2Rxr4NHaSbcjwgMf_4pBxgSxsSb9dt8YRapG7EG8QFi5ZCc6LYK0_qY8uPz8YKD78yhLrg62uFVe4-qM95zC2ltHAbVVpYW6-1wvW6GIMDbnbR93FvylQ43Mnh_we4q6cX5YwjLJaR6IovaalO8KhTt_EWwwDXdyf4Sl7cDFoe21e5j1ksvoMDeJMePXp6tld5N8qulgXyZ6n2LFs-toVPy87wPms6W6Rk6CFLzk-p_C7RdkupLV30eQ');
+localStorage.setItem('redirectURI', 'http://192.168.1.43:5001/finishedAuth.html');
+localStorage.setItem('clientId', 'Ypn0qYOHk48V31Ui_hd__Q');
+localStorage.setItem('userAgent', 'Bennn');
