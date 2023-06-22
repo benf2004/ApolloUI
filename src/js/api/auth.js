@@ -14,7 +14,7 @@ export function getInitialToken(code){
         console.log(r)
         localStorage.setItem("refreshToken", r.refreshToken)
         localStorage.setItem("accessToken", r.accessToken)
-        window.location.href = `${host}/src`
+        window.open(`${host}/src`)
     })
 }
 

@@ -46,7 +46,7 @@ function listingToPost(l){
     const postContent = getPostContent(l, postType)
     return new Post (
         l.title, l.link_flair_text, l.subreddit.display_name, l.author.name, l.score, l.upvote_ratio, l.num_comments,
-        l.created, l.edited, postType, postContent, "", r, l.name
+        l.created, l.edited, postType, postContent, "", r, l.name, l.likes,
     )
 }
 

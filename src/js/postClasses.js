@@ -1,11 +1,11 @@
 export default class Post {
-    constructor(title, flair, subreddit, OPUsername, upvotes, percentUpvote, commentsAmount, timeCreated, timeEdited, postType, postContent,
-                subredditIcon, r, id) {
+    constructor(title, flair, subreddit, OPUsername, score, percentUpvote, commentsAmount, timeCreated, timeEdited, postType, postContent,
+                subredditIcon, r, id, likes, viewed, clicked, saved) {
         this.title = title; // str
         this.flair = flair; // str
         this.subName = subreddit; // str
         this.OPUsername = OPUsername;
-        this.upvotes = upvotes; // int
+        this.score = score; // int
         this.commentsAmount = commentsAmount
         this.percentUpvote = percentUpvote // int
         this.timeCreated = timeCreated; // int
@@ -15,7 +15,7 @@ export default class Post {
         this.subredditIcon = subredditIcon; // str of url
         this.r = r;
         this.id = id;
-        this.actions = new UserActions(); // see UserInteractions class
+        this.actions = new UserActions(likes === true, likes === false, viewed, clicked, saved); // see UserInteractions class
     }
 
     addComments(comments){
@@ -31,7 +31,6 @@ export default class Post {
     }
 
     upvote(){
-        console.log(this)
         if (!this.actions.upvoted) {
             this.actions.upvoted = true
             this.actions.downvoted = false
@@ -39,7 +38,7 @@ export default class Post {
         }
         else {
             this.actions.upvoted = false
-            this.r.getSubmission(this.id).unvote()
+            this.r.getSubmission(this.id).upvote()
         }
         this.updateButtonStyles()
         this.removeMenu()
@@ -118,10 +117,9 @@ export default class Post {
         tnc.querySelector('.flair').textContent = this.flair;
         tnc.querySelector('.subName').textContent = this.subName;
         //tnc.querySelector('.subreddit-name-icon img.subIcon').src = this.subredditIcon;
-        tnc.querySelector('.upvotes').textContent = this.upvotes;
+        tnc.querySelector('.score').textContent = this.score;
         tnc.querySelector('.comments').textContent = this.commentsAmount;
         //tnc.querySelector('.time').textContent = this.hoursSincePosted;
-        console.log(this.postType)
         const pc = tnc.querySelector('.post-content')
         if (this.postType === "text") {
             const html = `<p class="darkgray"></p>`
@@ -146,6 +144,8 @@ export default class Post {
 
         this.ellipsisMenu = tnc.querySelector(".ellipsis")
         this.ellipsisMenu.addEventListener("click", () => this.createMenu())
+
+        this.updateButtonStyles()
 
 
         // Append the filled template to the document
