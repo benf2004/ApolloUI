@@ -794,6 +794,27 @@ window['Slip'] = (function(){
             }
             this.latestPosition = pos;
 
+            // changed by me. I now realize I probably didn't need to do this and should've used the "animate swipe" event. oh well.
+            const secondActionThreshold = 350; // px
+            const transformStr = this.target.node.style.transform
+            const match = transformStr.match(/[-+]?\d*\.?\d+/)
+            if (match){
+                const transformVal = parseFloat(match[0])
+                if (transformVal > 0){
+                    this.dispatch(this.target.node, "leftaction", {transformVal})
+                }
+                else if (transformVal > secondActionThreshold){
+                    this.dispatch(this.target.node, "farleftaction", {transformVal})
+                }
+                else if (transformVal < 0){
+                    this.dispatch(this.target.node, "rightaction", {transformVal})
+                }
+                else if (transformVal < (-1 * secondActionThreshold)){
+                    this.dispatch(this.target.node, "farrightaction", {transformVal})
+                }
+            }
+
+
             if (this.state.onMove) {
                 if (this.state.onMove.call(this) === false) {
                     e.preventDefault();
