@@ -7,7 +7,6 @@ html {
     font-family: "Arial", sans-serif !important;
 }
 
-
 .flex {
     display: flex;
 }
@@ -32,8 +31,8 @@ html {
 .post-content > p {
     margin-left: 40px;
     margin-right: 40px;
-    line-height: 1.2rem;
-    height: 3.6rem;
+    line-height: 1.2em;
+    height: 3.6em;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 3;
