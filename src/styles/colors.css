@@ -22,6 +22,14 @@
     background-color: #5E5E5E;
 }
 
+.lightgray {
+    color: #8F8F8F
+}
+
+.bg-lightgray {
+    background-color: #8F8F8F
+}
+
 .iosblue {
     color: #3578F7
 }
@@ -65,4 +73,8 @@
 
 .icon-iosblue {
     filter: invert(43%) sepia(75%) saturate(3672%) hue-rotate(207deg) brightness(99%) contrast(96%);
+}
+
+.icon-lightgray {
+    filter: invert(60%) sepia(23%) saturate(0%) hue-rotate(206deg) brightness(91%) contrast(91%);
 }

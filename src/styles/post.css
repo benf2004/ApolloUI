@@ -19,7 +19,7 @@
 
 code {
     background-color: #F8F8F7;
-    font-family: Courier, monospace;
+    font-family: Courier, monospace !important;
 }
 
 .post-title {
@@ -56,4 +56,68 @@ pre {
     background-color: #F7F7F7FF;
     padding: 20px 20px;
     border-radius: 20px;
+}
+
+.subname-username {
+    font-size: 2rem
+}
+
+.post-icons {
+    font-size: 2rem;
+}
+
+.post-icons > img {
+    height: 2rem;
+}
+
+sup {
+    vertical-align: super !important;
+    font-size: smaller !important;
+}
+
+.post-footer > p {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.comment-header {
+    justify-content: space-between;
+}
+
+.comment-actions {
+    background-color: transparent;
+    border: none;
+}
+
+
+.comments {
+    margin-left: 20px;
+    margin-right: 20px
+}
+
+.comment-username {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.comment-header > div > img, .comment-header > div > button{
+    height: 1.7rem;
+}
+
+.comment {
+    padding-top: 20px;
+    border-bottom: 1px solid #8F8F8F
+}
+
+.comment-upvotes {
+    font-size: 2rem;
+}
+
+.right-header {
+    height: 1.7rem;
+    font-size: 2rem;
+}
+
+.comment-actions > img {
+    margin-bottom: 50%;
 }
