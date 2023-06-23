@@ -1,17 +1,51 @@
 .post-action-buttons {
     justify-content: space-between;
+    height: 70px;
+}
+
+.post-action-buttons > button {
+    height: 100%;
 }
 
 .right-btn > img {
     height: 100%;
 }
 
+code {
+    background-color: #F8F8F7;
+    font-family: Courier, monospace;
+}
+
 .post-title {
-    font-size: 2em;
+    font-size: 3rem;
     font-weight: 500;
+}
+
+.md > p {
+    line-height: 80px;
 }
 
 .post-full-content {
     margin-left: 20px;
     margin-right: 20px;
+    font-size: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(24,112,246)
+}
+
+blockquote {
+    color: #5E5E5E;
+    border-left: 3px solid #5E5E5E;
+    padding-left: 20px;
+}
+
+ol {
+    margin-left: 20px
+}
+
+pre {
+    background-color: #F7F7F7FF;
 }

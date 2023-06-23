@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+}
+
 .flex {
     display: flex;
 }
@@ -27,13 +31,13 @@
 .post-content > p {
     margin-left: 40px;
     margin-right: 40px;
-    line-height: 1.2em;
-    height: 3.6em;
+    line-height: 1.2rem;
+    height: 3.6rem;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    font-size: 2.5em;
+    font-size: 2.5rem;
 }
 
 .w-100 {
@@ -41,12 +45,12 @@
 }
 
 .title {
-    font-size: 3em;
+    font-size: 3rem;
 }
 
 .post-info {
-    font-size: 2em;
-    align-items: center;
+    font-size: 2rem;
+    align-itrems: center;
 }
 
 .flair {
@@ -55,7 +59,7 @@
     border: none;
     width: fit-content;
     padding: 2px 7px;
-    font-size: 2em;
+    font-size: 2rem;
     color: #858585
 }
 
@@ -97,7 +101,7 @@ button {
 
 .action-btns {
     padding-top: 20px;
-    align-items: center;
+    align-itrems: center;
     justify-content: space-between;
 }
 
@@ -114,7 +118,7 @@ button {
 }
 
 .subreddit-name-icon {
-    font-size: 2.2em;
+    font-size: 2.2rem;
     margin-bottom: 15px;
     padding-top: 30px;
 }
@@ -148,7 +152,7 @@ button {
     z-index: 3;
     background-color: rgb(242,243,247, 0.95);
     padding: 20px;
-    font-size: 3em;
+    font-size: 3rem;
     height: 100px;
     justify-content: space-between;
 }
@@ -185,7 +189,7 @@ button {
     width: 100%;
     z-index: 1;
     height: 80px;
-    font-size: 3em;
+    font-size: 3rem;
     border-radius: 10px;
     border: none;
     background-color: rgb(238,238,239);
