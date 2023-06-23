@@ -1,6 +1,12 @@
 .post-action-buttons {
     justify-content: space-between;
     height: 70px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-top: 2px solid #D5D5D5;
+    border-bottom: 2px solid #D5D5D5;
+    padding-bottom: 40px;
+    box-sizing: content-box;
 }
 
 .post-action-buttons > button {
@@ -48,4 +54,6 @@ ol {
 
 pre {
     background-color: #F7F7F7FF;
+    padding: 20px 20px;
+    border-radius: 20px;
 }
