@@ -38,6 +38,14 @@
     background-color: #3578F7
 }
 
+.reply-blue {
+    color: #57B2F9
+}
+
+.bg-reply-blue {
+    background-color: #57B2F9;
+}
+
 .moderator-green {
     color: #4FB34C;
 }
