@@ -18,12 +18,9 @@ export default class Post {
         this.actions = new UserActions(likes === true, likes === false, false, clicked, saved); // see UserInteractions class
         comments.fetchMore({skipReplies: false, amount: 100}).then(result => {
             this.comments = result;
+            console.log(this.comments)
             }
         )
-    }
-
-    addComments(comments){
-        this.comments = comments
     }
 
     userIsOP(userName) {
@@ -32,6 +29,10 @@ export default class Post {
 
     userIsMod(userModerates=[]){
         return (this.subName in userModerates)
+    }
+
+    savePost(){
+
     }
 
     upvote(){
@@ -60,10 +61,6 @@ export default class Post {
         }
         this.updateButtonStyles()
         this.removeMenu()
-    }
-
-    savePost(){
-
     }
 
     updateButtonStyles(){
@@ -156,10 +153,34 @@ export default class Post {
     }
 }
 
-class iosMenu {
-    constructor(id, r) {
-        this.id = id;
-        this.r = r;
+class Comment {
+    constructor(username, body, id, parentId, likes, saved, depth, score, r){
+        this.username = username;
+        this.body = body;
+        this.id = id
+        this.parentId = parentId
+        this.depth = depth
+        this.score = score
+        this.r = r
+        this.actions = new UserActions(likes === true, likes === false, false, false, saved); // see UserInteractions class
+    }
+
+    downvote(){
+        if (!this.actions.downvoted) {
+            this.actions.upvoted = false
+            this.actions.downvoted = true
+            this.r.getSubmission(this.id).downvote()
+        }
+        else {
+            this.actions.downvoted = false
+            this.r.getSubmission(this.id).downvote()
+        }
+        this.updateIconStyle()
+        this.removeMenu()
+    }
+
+    createComment(){
+
     }
 }
 
@@ -168,6 +189,7 @@ export class UserActions {
         this.upvoted = upvoted; // bool
         this.downvoted = downvoted; // bool
         this.viewed = viewed; // bool
+        this.clicked = clicked // bool
         this.saved = saved; // bool
     }
 }

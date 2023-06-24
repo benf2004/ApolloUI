@@ -38,6 +38,7 @@ code {
     margin-left: 20px;
     margin-right: 20px;
     font-size: 3rem;
+    user-select: none;
 }
 
 a {
@@ -110,7 +111,8 @@ sup {
 
 .comment {
     padding: 20px;
-    border-bottom: 1px solid #8F8F8F
+    border-bottom: 1px solid #8F8F8F;
+    user-select: none
 }
 
 .comment-upvotes {

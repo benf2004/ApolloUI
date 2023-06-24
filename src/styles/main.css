@@ -130,6 +130,7 @@ button {
 
 .post-main {
     border-bottom: 20px solid #F3F3F7;
+    user-select: none;
 }
 
 .view-post-btn {

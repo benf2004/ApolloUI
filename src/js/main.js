@@ -29,7 +29,6 @@ let sortModeFunc = {
 
 function getPosts() {
     sortModeFunc[sortModeStr].then(listings => {
-        console.log(listings)
             if (needNewSlice) {
                 localStorage.setItem("before", listings[MAX_POSTS_LOADED - 1].name)
                 const nowPlus30 = new Date().getTime() + thrityMinutes
