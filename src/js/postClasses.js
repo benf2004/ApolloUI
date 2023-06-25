@@ -99,10 +99,11 @@ export default class Post {
     }
 
     openPost(e){
-        const target = findTopNode(e.target)
-        if (target.classList.contains("do-not-open")){
+        const topNode = findTopNode(e.target)
+        if (topNode.classList.contains("do-not-open") || e.target.classList.contains("do-not-open")){
             return;
         }
+        topNode.classList.add('bg-lightgray')
         localStorage.setItem(this.id, JSON.stringify(this))
         console.log(JSON.stringify(this))
         window.open(`${host}/post?postid=${this.id}`, "_self")
