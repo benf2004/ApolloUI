@@ -1,10 +1,17 @@
-import Post, {UserActions} from "./postClasses.js";
-import {getLocalCredentials} from "./api/auth.js";
+import Post from "../js/postClasses.js";
+import {getLocalCredentials} from "../js/auth.js";
 import {checkDefaults} from "./setDefaults.js";
+import {host} from "../js/host.js"
 
 checkDefaults();
 
-const r = new snoowrap(getLocalCredentials())
+let r;
+try {
+    r = new snoowrap(getLocalCredentials())
+}
+catch (e){
+    window.open(`${host}/auth`)
+}
 const MAX_POSTS_LOADED = 10;
 const thrityMinutes = 30 * 60000;
 

@@ -1,4 +1,4 @@
-import {host} from "../host.js";
+import {host} from "./host.js";
 
 export function getInitialToken(code){
     const options = {
@@ -14,7 +14,7 @@ export function getInitialToken(code){
         console.log(r)
         localStorage.setItem("refreshToken", r.refreshToken)
         localStorage.setItem("accessToken", r.accessToken)
-        window.open(`${host}/src`)
+        window.open(`${host}`, "_self")
     })
 }
 

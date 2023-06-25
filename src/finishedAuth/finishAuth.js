@@ -1,4 +1,4 @@
-import {getInitialToken } from "./api/auth.js";
+import {getInitialToken} from "../js/auth.js";
 
 function getCodeFromURI() {
     const urlParams = new URLSearchParams(window.location.search);

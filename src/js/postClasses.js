@@ -106,8 +106,8 @@ export default class Post {
     openPost(){
         let checkForSwipeTime = 500 // ms - will delay click from opening during this time
         localStorage.setItem(this.id, JSON.stringify(this))
-        console.log(this)
-        let openTimeOut = setTimeout(() => window.open(`${host}/post?postid=${this.id}`), checkForSwipeTime)
+        console.log(JSON.stringify(this))
+        let openTimeOut = setTimeout(() => window.open(`${host}/post?postid=${this.id}`, "_self"), checkForSwipeTime)
         document.body.addEventListener("slide:animateswipe", () => clearTimeout(openTimeOut))
     }
 
