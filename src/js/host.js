@@ -1,1 +1,1 @@
-export const host = "http://192.168.1.43:5001"
+export const host = "http://127.0.0.1:5001" // form should be "https://website.com" with no trailing backslash

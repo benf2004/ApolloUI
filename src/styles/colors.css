@@ -86,3 +86,11 @@
 .icon-lightgray {
     filter: invert(60%) sepia(23%) saturate(0%) hue-rotate(206deg) brightness(91%) contrast(91%);
 }
+
+.icon-upvote-orange {
+    filter: invert(47%) sepia(60%) saturate(1714%) hue-rotate(344deg) brightness(96%) contrast(92%);
+}
+
+.icon-downvote-cobalt {
+    filter: invert(37%) sepia(45%) saturate(2320%) hue-rotate(220deg) brightness(89%) contrast(93%);
+}
