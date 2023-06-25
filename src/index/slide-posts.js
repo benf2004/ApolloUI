@@ -1,7 +1,7 @@
 const list = document.querySelector("main")
 new Slip(list)
 let lastSwipeDistance = 1000; // any number greater than threshold
-const thresholdVal = 350; // in px
+const thresholdVal = 400; // in px
 let selectedAction = null;
 
 list.addEventListener('slip:beforereorder', function(e) {
