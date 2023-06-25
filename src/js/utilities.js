@@ -33,7 +33,7 @@ export function getPrettyTimeDiff(epochTimeStamp){
         return `${Math.round(hourDif * 60)}m`
     }
     else if (hourDif < 24) {
-        return `${hourDif}h`
+        return `${Math.round(hourDif)}h`
     }
     const dayDif = Math.round(hourDif / 24)
     if (dayDif < 30){
@@ -46,4 +46,17 @@ export function getPrettyTimeDiff(epochTimeStamp){
     const yearDif = monthDif / 12
     const roundedYearDif = Math.round(yearDif * 10) * 10 // nearest 10th
     return `${roundedYearDif}y`
+}
+
+export function findTopNode(el) {
+    if (el.classList.contains("post-main") || !el.parentNode) {
+        return el;
+    }
+
+    let ancestor = el.parentNode;
+    while (!ancestor.classList.contains("post-main")) {
+        ancestor = ancestor.parentNode;
+    }
+
+    return ancestor;
 }

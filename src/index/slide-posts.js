@@ -9,7 +9,7 @@ list.addEventListener('slip:beforereorder', function(e) {
 });
 
 list.addEventListener('slip:beforeswipe', function(e) {
-    removeActions()
+    removeActions(e.target)
 });
 
 list.addEventListener('slip:swipe', function (e){
@@ -17,22 +17,28 @@ list.addEventListener('slip:swipe', function (e){
     const node = e.target;
     const event = new CustomEvent(selectedAction + "Swipe")
     node.dispatchEvent(event)
-    removeActions()
+    removeActions(e.target)
 })
 
-function removeActions(){
+function removeActions(node){
     selectedAction = null
     let la = document.querySelector(".left-action")
     let ra = document.querySelector(".right-action")
     if (la) la.remove()
     if (ra) ra.remove()
+    setTimeout(() => node.classList.remove("do-not-open"), 500)
 }
 
-list.addEventListener('slip:cancelswipe', removeActions)
+list.addEventListener('slip:cancelswipe', function (e){
+    removeActions(e.target)
+})
 
 list.addEventListener('slip:leftaction', function (e){
     let ra = document.querySelector(".right-action")
     if (ra) ra.remove()
+
+    e.target.classList.add("do-not-open")
+
     const a = e.target.getBoundingClientRect()
     let la = document.querySelector(".left-action")
     if (!la) {
@@ -57,6 +63,8 @@ list.addEventListener('slip:leftaction', function (e){
 list.addEventListener("slip:rightaction", function (e){
     let la = document.querySelector(".left-action")
     if (la) la.remove()
+
+    e.target.classList.add("do-not-open")
 
     const a = e.target.getBoundingClientRect()
     let ra = document.querySelector(".right-action")

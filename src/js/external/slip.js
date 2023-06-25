@@ -159,7 +159,7 @@ window['Slip'] = (function(){
 
         this.options = options = options || {};
         this.options.keepSwipingPercent = options.keepSwipingPercent || 0;
-        this.options.minimumSwipeVelocity = options.minimumSwipeVelocity || 1;
+        this.options.minimumSwipeVelocity = options.minimumSwipeVelocity || 0.2;
         this.options.minimumSwipeTime = options.minimumSwipeTime || 110;
         this.options.ignoredElements = options.ignoredElements || [];
         this.options.accessibility = options.accessibility || accessibilityDefaults;
@@ -909,7 +909,6 @@ window['Slip'] = (function(){
                 event.initEvent('slip:' + eventName, true, true);
                 event.detail = detail;
             }
-            console.log(event)
             return targetNode.dispatchEvent(event);
         },
 

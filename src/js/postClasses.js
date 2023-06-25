@@ -1,4 +1,4 @@
-import {getPrettyTimeDiff} from "./utilities.js";
+import {getPrettyTimeDiff, findTopNode} from "./utilities.js";
 import {host} from "./host.js"
 
 export default class Post {
@@ -84,11 +84,6 @@ export default class Post {
         }
     }
 
-    doMenuFuncThenClose(func){
-        func()
-        this.cancelBtn.addEventListener("click", this.removeMenu)
-    }
-
     createMenu() {
         const menuTemplate = document.getElementById("iosMenu")
         const menuClone = menuTemplate.content.cloneNode(true)
@@ -103,13 +98,14 @@ export default class Post {
         document.body.querySelector("main").appendChild(menuClone)
     }
 
-    openPost(){
-        console.log("click")
-        let checkForSwipeTime = 500 // ms - will delay click from opening during this time
+    openPost(e){
+        const target = findTopNode(e.target)
+        if (target.classList.contains("do-not-open")){
+            return;
+        }
         localStorage.setItem(this.id, JSON.stringify(this))
         console.log(JSON.stringify(this))
-        let openTimeOut = setTimeout(() => window.open(`${host}/post?postid=${this.id}`, "_self"), checkForSwipeTime)
-        document.body.addEventListener("slide:animateswipe", () => clearTimeout(openTimeOut))
+        window.open(`${host}/post?postid=${this.id}`, "_self")
     }
 
     removeMenu(){
@@ -157,7 +153,7 @@ export default class Post {
         outerContainer.addEventListener("leftSwipe", () => this.upvote())
         //tnc.addEventListener("rightSwipe", () => this.reply()) // TODO: add reply function
         outerContainer.addEventListener("farRightSwipe", () => this.savePost()) // TODO: add working save function
-        outerContainer.addEventListener("click", () => this.openPost())
+        outerContainer.addEventListener("click", (e) => this.openPost(e))
 
         this.ellipsisMenu = tnc.querySelector(".ellipsis")
         this.ellipsisMenu.addEventListener("click", () => this.createMenu())
