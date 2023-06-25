@@ -105,8 +105,9 @@ export default class Post {
         }
         topNode.classList.add('bg-lightgray')
         localStorage.setItem(this.id, JSON.stringify(this))
-        console.log(JSON.stringify(this))
-        window.open(`${host}/post?postid=${this.id}`, "_self")
+        let url = `${host}/post/?postid=${this.id}`
+        console.log(url)
+        window.open(url, "_self")
     }
 
     removeMenu(){
@@ -129,7 +130,7 @@ export default class Post {
         if (this.postType === "text") {
             const html = `<p class="darkgray"></p>`
             pc.insertAdjacentHTML("afterbegin", html)
-            pc.querySelector("p").innerText = this.postContent
+            pc.querySelector("p").innerHTML = this.postContent
         }
         else if (this.postType === "image") {
             const html = `<img src="${this.postContent}">`
@@ -164,9 +165,46 @@ export default class Post {
 
         this.updateButtonStyles()
     }
+
+    fillInPost() {
+        const template = `
+        <div class="post-full-content">
+            <h2 class="post-title"></h2>
+            <div class="post-body">
+            </div>
+            <div class="post-footer darkgray">
+                <p class="subname-username bold">in <span class="subname"></span> by <span class="username"></span></p>
+                <p class="post-icons">
+                    <img class="icon-darkgray" alt="upvote icon" src="../icons/arrowup.svg"> <span class="upvote-count"></span>
+                    <img class="icon-darkgray" alt="smiley face" src="../icons/smileyface.svg" alt="smiley face"> <span class="upvote-percent"></span>
+                    <img class="icon-darkgray" alt="message bubble" src="../icons/message.svg" alt="messages"> <span class="comment-count"></span>
+                </p>
+            </div>
+        </div>
+        `
+        // copy the template
+        const commentTemplate = document.getElementById("post-body-template");
+        const ptc = commentTemplate.content.cloneNode(true); // post template clone
+
+        // fill in info
+        ptc.querySelector(".post-title").textContent = this.title
+        ptc.querySelector(".post-body").innerHTML = this.postContent
+        ptc.querySelector(".subname").textContent = this.subName
+        ptc.querySelector(".username").textContent = this.OPUsername
+
+        // add actions
+
+        // append to main
+        document.querySelector("main").appendChild(ptc)
+
+    }
+
+    static fromJSON(serializedJson) { // see https://stackoverflow.com/questions/43626064/parsing-es6-class-objects-from-localstorage-doesnt-include-class-functions
+        return Object.assign(new Post(), JSON.parse(serializedJson))
+    }
 }
 
-class Comment {
+export class Comment {
     constructor(username, body, id, parentId, likes, saved, depth, score, created, edited, r){
         this.username = username; // str
         this.body = body; // str
@@ -212,18 +250,6 @@ class Comment {
     }
 
     createComment(){
-        const template = `
-        <template id="comment-template">
-            <div class="comment" data-parent-comment="">
-                <div class="comment-header flex">
-                    <div><span class="comment-username"></span> &nbsp; <img class="icon-darkgray vote-icon" src="icons/arrowup.svg"> <span class="comment-score darkgray"></span></div>
-                    <div class="right-header flex"><button class="comment-actions"><img class="icon-darkgray" src="icons/ellipsis.svg"></button> &nbsp; <span class="comment-time lightgray"></span></div>
-                </div>
-                <div class="comment-body">
-                </div>
-            </div>
-        </template>`
-
         // copy the template
         const commentTemplate = document.getElementById("comment-template");
         const ctc = commentTemplate.content.cloneNode(true); //thumbNailClone

@@ -23,98 +23,39 @@
     <label id="searchlabel"></label>
     <input id="searchbar" type="text" placeholder="Find in Comments">
 </div>
-<div class="outer-post w-full">
-    <div class="post-full-content">
-        <h2 class="post-title">Ignore this. Just testing styling</h2>
-        <div class="post-body">
-            <!-- SC_OFF --><div class="md">
-            <h1>Ignore this</h1>
-
-            <h2>This is just testing styling</h2>
-
-            <p>How does <sup>superscript work in markdown?</sup></p>
-
-            <p><code>how are you all doing today</code></p>
-
-            <p><del>testing this 123 123</del></p>
-
-            <p><a href="https://link.com">linkity link link link</a></p>
-
-            <p><strong>bold</strong></p>
-
-            <p><em>italics</em></p>
-
-            <blockquote>
-                <p>this is a cool quotewith many lines  </p>
-
-                <p>and many paragraphs</p>
-            </blockquote>
-
-            <p>&#x200B;</p>
-
-            <ul>
-                <li>Unordered</li>
-                <li>list
-
-                    <ul>
-                        <li>with</li>
-                        <li>tabs
-
-                            <ul>
-                                <li>and more</li>
-                                <li>tabs</li>
-                            </ul></li>
-                    </ul></li>
-            </ul>
-
-            <p>&#x200B;</p>
-
-            <ol>
-                <li>ordered</li>
-                <li>list
-
-                    <ol>
-                        <li>with
-
-                            <ol>
-                                <li>tabs</li>
-                            </ol></li>
-                    </ol></li>
-            </ol>
-
-            <p>&#x200B;</p>
-
-            <pre><code>This is a big long code block sldakjaflakjsdlkfjalskdjflkjadslkfjdalskflkdsajlkfjdlaskfjklsd
-wow so much code!
-</code></pre>
-        </div><!-- SC_ON -->
+<main class="outer-post w-full">
+    <template id="post-body-template">
+        <div class="post-full-content">
+            <h2 class="post-title"></h2>
+            <div class="post-body">
+            </div>
+            <div class="post-footer darkgray">
+                <p class="subname-username bold">in <span class="subname"></span> by <span class="username"></span></p>
+                <p class="post-icons">
+                    <img class="icon-darkgray" alt="upvote icon" src="../icons/arrowup.svg"> <span class="upvote-count"></span>
+                    <img class="icon-darkgray" alt="smiley face" src="../icons/smileyface.svg" alt="smiley face"> <span class="upvote-percent"></span>
+                    <img class="icon-darkgray" alt="message bubble" src="../icons/message.svg" alt="messages"> <span class="comment-count"></span>
+                </p>
+            </div>
         </div>
-        <div class="post-footer darkgray">
-            <p class="subname-username bold">in <span class="subname">Save3rdPartyApps</span> by <span class="username">OA2Gsheets</span></p>
-            <p class="post-icons">
-                <img class="icon-darkgray" alt="upvote icon" src="../icons/arrowup.svg"> <span class="upvote-count">1</span>
-                <img class="icon-darkgray" alt="smiley face" src="../icons/smileyface.svg" alt="smiley face"> <span class="upvote-percent">100%</span>
-                <img class="icon-darkgray" alt="message bubble" src="../icons/message.svg" alt="messages"> <span class="comment-count">2</span>
-            </p>
+        <div class="post-action-buttons flex">
+            <button class="upvote right-btn">
+                <img src="../icons/arrowup.svg" alt="upvote" class="icon-iosblue">
+            </button>
+            <button class="downvote right-btn">
+                <img src="../icons/arrowdown.svg" alt="downvote" class="icon-iosblue">
+            </button>
+            <button class="save right-btn">
+                <img src="../icons/bookmark.svg" alt="save" class="icon-iosblue">
+            </button>
+            <button class="reply right-btn">
+                <img src="../icons/reply.svg" alt="reply" class="icon-iosblue">
+            </button>
+            <button class="share right-btn">
+                <img src="../icons/share.svg" alt="share" class="icon-iosblue">
+            </button>
         </div>
-    </div>
-    <div class="post-action-buttons flex">
-        <button class="upvote right-btn">
-            <img src="../icons/arrowup.svg" alt="upvote" class="icon-iosblue">
-        </button>
-        <button class="downvote right-btn">
-            <img src="../icons/arrowdown.svg" alt="downvote" class="icon-iosblue">
-        </button>
-        <button class="save right-btn">
-            <img src="../icons/bookmark.svg" alt="save" class="icon-iosblue">
-        </button>
-        <button class="reply right-btn">
-            <img src="../icons/reply.svg" alt="reply" class="icon-iosblue">
-        </button>
-        <button class="share right-btn">
-            <img src="../icons/share.svg" alt="share" class="icon-iosblue">
-        </button>
-    </div>
+    </template>
     <div class="comments">
         <template id="comment-template">
             <div class="comment">
@@ -127,8 +68,9 @@ wow so much code!
             </div>
         </template>
     </div>
-</div>
+</main>
 <script src="../js/external/slip.js"></script>
+<script src="loadPost.js" type="module"></script>
 <script src="slide-comments.js" type="module"></script>
 </body>
 </html>

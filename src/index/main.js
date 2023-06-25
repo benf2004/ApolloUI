@@ -55,7 +55,7 @@ function getPostType(postHint) {
 
 function getPostContent(l, postType){
     if (postType === "text"){
-        return l.selftext
+        return l.selftext_html
     }
     else if (postType === "link"){
         return l.url
