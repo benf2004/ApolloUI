@@ -909,6 +909,7 @@ window['Slip'] = (function(){
                 event.initEvent('slip:' + eventName, true, true);
                 event.detail = detail;
             }
+            console.log(event)
             return targetNode.dispatchEvent(event);
         },
 

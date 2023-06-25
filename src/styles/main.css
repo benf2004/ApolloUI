@@ -224,3 +224,11 @@ used this handy tool: https://yoksel.github.io/url-encoder/ + this stackoverflow
 .slip-swiping-container {
     overflow-x: hidden;
 }
+
+.setup-auth {
+    margin: 40px;
+    padding: 20px;
+    font-size: 3.5rem;
+    border: 5px solid lightblue;
+    border-radius: 5px;
+}

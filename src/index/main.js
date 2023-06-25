@@ -6,12 +6,10 @@ import {host} from "../js/host.js"
 checkDefaults();
 
 let r;
-try {
-    r = new snoowrap(getLocalCredentials())
-}
-catch (e){
-    window.open(`${host}/auth`)
-}
+
+const clientId = localStorage.getItem("clientId")
+if (!clientId) document.querySelector("main").innerHTML = `<div class="setup-auth">You must first set up your API credentials. <a href="/auth">Click here to get started.</a></div>`
+r = new snoowrap(getLocalCredentials())
 const MAX_POSTS_LOADED = 10;
 const thrityMinutes = 30 * 60000;
 

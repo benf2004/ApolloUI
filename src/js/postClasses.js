@@ -104,6 +104,7 @@ export default class Post {
     }
 
     openPost(){
+        console.log("click")
         let checkForSwipeTime = 500 // ms - will delay click from opening during this time
         localStorage.setItem(this.id, JSON.stringify(this))
         console.log(JSON.stringify(this))
