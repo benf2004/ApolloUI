@@ -273,7 +273,7 @@ export class Comment {
         const ctc = commentTemplate.content.cloneNode(true); //thumbNailClone
 
         // fill in the info
-        const commentDiv = ctc.querySelector(".comment")
+        const commentDiv = ctc.querySelector(".comment-outer")
         commentDiv.querySelector(".comment-username").textContent = this.username;
         commentDiv.querySelector(".comment-score").textContent = this.score;
         //ctc.querySelector(".comment-time").textContent = this.timeSincePost TODO: fill in

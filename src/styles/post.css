@@ -47,7 +47,8 @@ code {
 
 a {
     text-decoration: none;
-    color: rgb(24,112,246)
+    color: rgb(24,112,246);
+    overflow-wrap: break-word;
 }
 
 blockquote {
@@ -115,10 +116,13 @@ sup {
 
 .comment {
     padding: 20px;
-    margin: 20px;
-    border-top: 1px solid #D5D5D5;
     user-select: none;
-    font-size: 2rem;
+}
+
+.comment-outer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #D5D5D5;
 }
 
 .comment-upvotes {
@@ -135,17 +139,42 @@ sup {
     width: 35px;
 }
 
-.tab1 {
-    border-left: 2px solid red;
-    margin-left: 40px;
+.tab4 {
+    margin-left: 160px;
 }
 
-.tab2 {
-    border-left: 2px solid orange;
-    margin-left: 80px;
+.tab4 > div {
+    border-left: 4px solid green;
 }
 
-.tab3 {
-    border-left: 2px solid yellow;
-    margin-left: 120px;
+.tab5 {
+    margin-left: 200px;
+}
+
+.tab5 > div {
+    border-left: 4px solid blue;
+}
+
+.tab6 {
+    margin-left: 240px;
+}
+
+.tab6 > div {
+    border-left: 4px solid indigo;
+}
+
+.tab7 {
+    margin-left: 280px;
+}
+
+.tab7 > div {
+    border-left: 4px solid violet;
+}
+
+.tab8 {
+    margin-left: 320px;
+}
+
+.tab8 > div {
+    border-left: 4px solid purple;
 }
