@@ -1,6 +1,6 @@
 import Post, {Comment} from "../js/postClasses.js"
 import {getLocalCredentials} from "../js/auth.js";
-import {listingToPost} from "../js/utilities.js";
+import {listingToPost} from "../js/common.js";
 
 let r;
 const urlParams = new URLSearchParams(window.location.search);

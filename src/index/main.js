@@ -2,7 +2,7 @@ import Post from "../js/postClasses.js";
 import {getLocalCredentials} from "../js/auth.js";
 import {checkDefaults} from "./setDefaults.js";
 import {host} from "../js/host.js"
-import {listingToPost} from "../js/utilities.js";
+import {listingToPost} from "../js/common.js";
 
 checkDefaults();
 

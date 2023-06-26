@@ -1,4 +1,4 @@
-import {getPrettyTimeDiff, findTopNode} from "./utilities.js";
+import {getPrettyTimeDiff, findTopNode} from "./common.js";
 import {host} from "./host.js"
 
 export default class Post {

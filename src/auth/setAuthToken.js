@@ -1,4 +1,4 @@
-import {generateUUID} from "../js/utilities.js";
+import {generateUUID} from "../js/common.js";
 
 document.getElementById("authorize").addEventListener("click", authorizeUser)
 
