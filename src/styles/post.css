@@ -139,6 +139,30 @@ sup {
     width: 35px;
 }
 
+.tab1 {
+    margin-left: 40px;
+}
+
+.tab1 > div {
+    border-left: 4px solid red;
+}
+
+.tab2 {
+    margin-left: 80px;
+}
+
+.tab2 > div {
+    border-left: 4px solid orange;
+}
+
+.tab3 {
+    margin-left: 120px;
+}
+
+.tab3 > div {
+    border-left: 4px solid yellow;
+}
+
 .tab4 {
     margin-left: 160px;
 }
