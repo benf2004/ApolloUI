@@ -19,6 +19,7 @@ export default class Post {
         this.r = r;
         this.id = id;
         this.actions = new UserActions(likes === true, likes === false, false, clicked, saved); // see UserInteractions class
+        this.commentObj = comments
     }
 
     userIsOP(userName) {
@@ -27,6 +28,17 @@ export default class Post {
 
     userIsMod(userModerates=[]){
         return (this.subName in userModerates)
+    }
+
+    loadComments(){
+        this.commentObj.fetchMore({skipReplies: false, amount: 100}).then(result => {
+                this.comments = []
+                result.forEach(c => {
+                    console.log(result)
+                    this.comments.push(new Comment(c.username, c.body, c.name, ))
+                })
+            }
+        )
     }
 
     savePost(){
@@ -271,6 +283,8 @@ export class Comment {
         else {
             commentDiv.setAttribute("top", "true")
         }
+
+        commentDiv.classList.add(`tab${depth}`)
 
         // add actions TODO: Add username clicked action & menu actions
         commentDiv.addEventListener("farLeftSwipe", () => this.downvote())
