@@ -1,3 +1,8 @@
+p {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
 .post-action-buttons {
     justify-content: space-between;
     height: 70px;
@@ -30,14 +35,13 @@ code {
     font-weight: 500;
 }
 
-.md > p {
+.post-body {
     font-size: 2.5rem;
 }
 
 .post-full-content {
     margin-left: 20px;
     margin-right: 20px;
-    font-size: 3rem;
     user-select: none;
 }
 
@@ -111,8 +115,11 @@ sup {
 
 .comment {
     padding: 20px;
-    border-bottom: 1px solid #8F8F8F;
-    user-select: none
+    margin: 20px;
+    box-sizing: content-box;
+    border-bottom: 1px solid #D5D5D5;
+    user-select: none;
+    font-size: 2rem;
 }
 
 .comment-upvotes {
@@ -127,4 +134,19 @@ sup {
 .comment-actions > img {
     padding-top: 25%;
     width: 35px;
+}
+
+.tab1 {
+    border-left: 2px solid red;
+    margin-left: 40px;
+}
+
+.tab2 {
+    border-left: 2px solid orange;
+    margin-left: 80px;
+}
+
+.tab3 {
+    border-left: 2px solid yellow;
+    margin-left: 120px;
 }

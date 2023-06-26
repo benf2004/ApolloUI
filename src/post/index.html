@@ -56,19 +56,19 @@
             </button>
         </div>
     </template>
-    <div class="comments">
-        <template id="comment-template">
-            <div class="comment">
-                <div class="comment-header flex">
-                    <div><span class="comment-username"></span> &nbsp; <img class="icon-darkgray" src="../icons/arrowup.svg"> <span class="comment-score darkgray"></span></div>
-                    <div class="right-header flex"><button class="comment-actions"><img class="icon-darkgray" src="../icons/ellipsis.svg"></button> &nbsp; <span class="comment-time lightgray"></span></div>
-                </div>
-                <div class="comment-body">
-                </div>
-            </div>
-        </template>
-    </div>
 </main>
+<div class="comments">
+</div>
+<template id="comment-template">
+    <div class="comment">
+        <div class="comment-header flex">
+            <div><span class="comment-username"></span> &nbsp; <img class="icon-darkgray vote-icon" src="../icons/arrowup.svg"> <span class="comment-score darkgray"></span></div>
+            <div class="right-header flex"><button class="comment-actions"><img class="icon-darkgray" src="../icons/ellipsis.svg"></button> &nbsp; <span class="comment-time lightgray"></span></div>
+        </div>
+        <div class="comment-body">
+        </div>
+    </div>
+</template>
 <script src="../js/external/slip.js"></script>
 <script src="../js/external/snoowrapv1.min.js"></script>
 <script src="loadPost.js" type="module"></script>

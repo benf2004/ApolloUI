@@ -1,16 +1,16 @@
-import {getPrettyTimeDiff, findTopNode} from "./common.js";
+import {getPrettyTimeDiff, findTopNode, listingToComment} from "./common.js";
 import {host} from "./host.js"
 
 export default class Post {
     constructor(title, flair, subreddit, OPUsername, score, percentUpvote, commentsAmount, timeCreated, timeEdited, postType, postContent,
-                subredditIcon, r, id, likes, clicked, saved, comments) {
+                subredditIcon, r, id, likes, clicked, saved, commentList) {
         this.title = title; // str
         this.flair = flair; // str
         this.subName = subreddit; // str
         this.OPUsername = OPUsername;
         this.score = score; // int
         this.commentsAmount = commentsAmount
-        this.percentUpvote = percentUpvote // int
+        this.percentUpvote = Math.round(percentUpvote * 100).toString() + "%" // str
         this.timeCreatedString = getPrettyTimeDiff(timeCreated); // int
         this.timeEdited = timeEdited; // int TODO add edit time with pencil icon (check if equal to time created)
         this.postType = postType; // str: either "image", "link", "video", or "text"
@@ -19,7 +19,7 @@ export default class Post {
         this.r = r;
         this.id = id;
         this.actions = new UserActions(likes === true, likes === false, false, clicked, saved); // see UserInteractions class
-        this.commentObj = comments
+        this.commentList = commentList
     }
 
     userIsOP(userName) {
@@ -203,6 +203,9 @@ export default class Post {
         ptc.querySelector(".post-body").innerHTML = this.postContent
         ptc.querySelector(".subname").textContent = this.subName
         ptc.querySelector(".username").textContent = this.OPUsername
+        ptc.querySelector(".upvote-count").textContent = this.score
+        ptc.querySelector(".upvote-percent").textContent = this.percentUpvote
+        ptc.querySelector(".comment-count").textContent = this.commentsAmount
 
         // add actions
 
@@ -241,21 +244,24 @@ export class Comment {
         else {
             this.scoreSpan.innerText = Number(this.scoreSpan.innerText) - 1
             this.actions.upvoted = false
-            this.r.getSubmission(this.id).upvote()
+            this.r.getSubmission(this.id).unvote()
         }
         this.updateIconStyle()
         this.removeMenu()
     }
 
     downvote(){
+        if (this.actions.upvoted) this.scoreSpan.innerText = Number(this.scoreSpan.innerText) - 1
         if (!this.actions.downvoted) {
+            this.scoreSpan.innerText = Number(this.scoreSpan.innerText) - 1
             this.actions.upvoted = false
             this.actions.downvoted = true
             this.r.getSubmission(this.id).downvote()
         }
         else {
+            this.scoreSpan.innerText = Number(this.scoreSpan.innerText) + 1
             this.actions.downvoted = false
-            this.r.getSubmission(this.id).downvote()
+            this.r.getSubmission(this.id).unvote()
         }
         this.updateIconStyle()
         this.removeMenu()
@@ -268,13 +274,13 @@ export class Comment {
 
         // fill in the info
         const commentDiv = ctc.querySelector(".comment")
-        ctc.querySelector(".comment-username").textContent = this.username;
-        ctc.querySelector(".comment-upvotes").textContent = this.score;
+        commentDiv.querySelector(".comment-username").textContent = this.username;
+        commentDiv.querySelector(".comment-score").textContent = this.score;
         //ctc.querySelector(".comment-time").textContent = this.timeSincePost TODO: fill in
-        ctc.querySelector(".comment-body").innerHtml = this.body
+        commentDiv.querySelector(".comment-body").innerHTML = this.body
 
-        this.voteIcon = ctc.querySelector(".vote-icon")
-        this.scoreSpan = ctc.querySelector(".comment-score")
+        this.voteIcon = commentDiv.querySelector(".vote-icon")
+        this.scoreSpan = commentDiv.querySelector(".comment-score")
 
         if (this.depth > 0) {
             commentDiv.setAttribute("data-parent-comment", this.parentId)
@@ -284,7 +290,7 @@ export class Comment {
             commentDiv.setAttribute("top", "true")
         }
 
-        commentDiv.classList.add(`tab${depth}`)
+        commentDiv.classList.add(`tab${this.depth}`)
 
         // add actions TODO: Add username clicked action & menu actions
         commentDiv.addEventListener("farLeftSwipe", () => this.downvote())
@@ -307,14 +313,17 @@ export class Comment {
         this.scoreSpan.classList.remove("upvote-orange", "downvote-cobalt", "darkgray")
         if (this.actions.upvoted){
             this.voteIcon.classList.add("icon-upvote-orange")
+            this.voteIcon.src = "../icons/arrowup.svg"
             this.scoreSpan.classList.add("upvote-orange")
         }
         else if (this.actions.downvoted){
             this.voteIcon.classList.add("icon-downvote-cobalt")
+            this.voteIcon.src = "../icons/arrowdown.svg"
             this.scoreSpan.classList.add("downvote-cobalt")
         }
         else {
             this.voteIcon.classList.add("icon-darkgray")
+            this.voteIcon.src = "../icons/arrowup.svg"
             this.scoreSpan.classList.add("darkgray")
         }
     }

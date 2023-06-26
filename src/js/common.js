@@ -1,4 +1,4 @@
-import Post from "./postClasses.js";
+import Post, {Comment} from "./postClasses.js";
 
 export function generateUUID() { // created by ChatGPT
     let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -81,6 +81,12 @@ function getPostContent(l, postType){
     }
 }
 
+export function listingToComment(l, r){
+    return new Comment (
+        l.author.name, l.body_html, l.name, l.parent_id, l.likes, l.saved, l.depth, l.score, l.created, l.edited, r
+    )
+}
+
 export function listingToPost(l, r){
     const postType = getPostType(l.post_hint)
     const postContent = getPostContent(l, postType)
@@ -88,4 +94,14 @@ export function listingToPost(l, r){
         l.title, l.link_flair_text, l.subreddit.display_name, l.author.name, l.score, l.upvote_ratio, l.num_comments,
         l.created, l.edited, postType, postContent, "", r, l.name, l.likes, l.visited, l.saved, l.comments
     )
+}
+
+export function commentListingToArray(comments, r, commentList=[]) {
+    for (let comment of comments) {
+        commentList.push(listingToComment(comment, r))
+        if (comment.replies) {
+            commentList = commentListingToArray(comment.replies, r, commentList)
+        }
+    }
+    return commentList
 }
