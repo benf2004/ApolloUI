@@ -1,6 +1,6 @@
 p {
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .post-action-buttons {
@@ -115,13 +115,14 @@ sup {
 }
 
 .comment {
-    padding: 20px;
+    padding-right: 20px;
+    padding-left: 30px;
     user-select: none;
 }
 
 .comment-outer {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-top: 1px solid #D5D5D5;
 }
 
@@ -139,28 +140,28 @@ sup {
     width: 35px;
 }
 
-.tab1 {
+.tab1, .tab8 {
     margin-left: 40px;
 }
 
-.tab1 > div {
-    border-left: 4px solid red;
+.tab1 > div, .tab8 > div {
+    border-left: 4px solid #DF5241;
 }
 
-.tab2 {
+.tab2, .tab9 {
     margin-left: 80px;
 }
 
-.tab2 > div {
-    border-left: 4px solid orange;
+.tab2 > div, .tab9 > div{
+    border-left: 4px solid #F09747;
 }
 
-.tab3 {
+.tab3, .tab10 {
     margin-left: 120px;
 }
 
-.tab3 > div {
-    border-left: 4px solid yellow;
+.tab3 > div, .tab10 > div {
+    border-left: 4px solid #F3D35D;
 }
 
 .tab4 {
@@ -168,7 +169,7 @@ sup {
 }
 
 .tab4 > div {
-    border-left: 4px solid green;
+    border-left: 4px solid #3F6F4F;
 }
 
 .tab5 {
@@ -176,7 +177,7 @@ sup {
 }
 
 .tab5 > div {
-    border-left: 4px solid blue;
+    border-left: 4px solid #3472D5;
 }
 
 .tab6 {
@@ -184,7 +185,7 @@ sup {
 }
 
 .tab6 > div {
-    border-left: 4px solid indigo;
+    border-left: 4px solid #2B4583;
 }
 
 .tab7 {
@@ -192,13 +193,5 @@ sup {
 }
 
 .tab7 > div {
-    border-left: 4px solid violet;
-}
-
-.tab8 {
-    margin-left: 320px;
-}
-
-.tab8 > div {
-    border-left: 4px solid purple;
+    border-left: 4px solid #5E3D90;
 }
