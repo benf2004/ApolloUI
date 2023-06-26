@@ -1,3 +1,5 @@
+import Post from "./postClasses.js";
+
 export function generateUUID() { // created by ChatGPT
     let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         let r = Math.random() * 16 | 0,
@@ -59,4 +61,31 @@ export function findTopNode(el) {
     }
 
     return ancestor;
+}
+
+function getPostType(postHint) {
+    if (postHint === null || postHint === undefined || postHint === "self") return "text"
+    else if (postHint.includes("video")) return "video"
+    else return postHint
+}
+
+function getPostContent(l, postType){
+    if (postType === "text"){
+        return l.selftext_html
+    }
+    else if (postType === "link"){
+        return l.url
+    }
+    else if (postType === "image"){
+        return l.preview.images[0].source.url
+    }
+}
+
+export function listingToPost(l, r){
+    const postType = getPostType(l.post_hint)
+    const postContent = getPostContent(l, postType)
+    return new Post (
+        l.title, l.link_flair_text, l.subreddit.display_name, l.author.name, l.score, l.upvote_ratio, l.num_comments,
+        l.created, l.edited, postType, postContent, "", r, l.name, l.likes, l.visited, l.saved, l.comments
+    )
 }
