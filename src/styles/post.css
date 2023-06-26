@@ -116,8 +116,7 @@ sup {
 .comment {
     padding: 20px;
     margin: 20px;
-    box-sizing: content-box;
-    border-bottom: 1px solid #D5D5D5;
+    border-top: 1px solid #D5D5D5;
     user-select: none;
     font-size: 2rem;
 }
