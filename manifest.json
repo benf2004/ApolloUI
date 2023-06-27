@@ -1,0 +1,30 @@
+{
+  "background_color": "#ffffff",
+  "description": "An attempt at cloning the Apollo for Reddit UI in the browser",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Foopollo",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "Foopollo",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [
+    "social"
+  ],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "A test shortcut",
+      "url": "https://apollo.phooey.foo",
+      "description": "Home"
+    }
+  ],
+  "lang": "en"
+}
