@@ -105,3 +105,8 @@ export function commentListingToArray(comments, r, commentList=[]) {
     }
     return commentList
 }
+
+export function bounceIcon(el){
+    el.classList.add("pulsate-fwd")
+    setTimeout(() => el.classList.remove("pulsate-fwd"), 1500)
+}

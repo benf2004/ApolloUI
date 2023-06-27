@@ -1,4 +1,4 @@
-import {getPrettyTimeDiff, findTopNode, listingToComment} from "./common.js";
+import {getPrettyTimeDiff, findTopNode, listingToComment, bounceIcon} from "./common.js";
 import {host} from "./host.js"
 
 export default class Post {
@@ -55,6 +55,7 @@ export default class Post {
             this.actions.upvoted = false
             this.r.getSubmission(this.id).upvote()
         }
+        bounceIcon(this.upvoteBtn)
         this.updateButtonStyles()
         this.removeMenu()
     }
@@ -69,6 +70,7 @@ export default class Post {
             this.actions.downvoted = false
             this.r.getSubmission(this.id).downvote()
         }
+        bounceIcon(this.downvoteBtn)
         this.updateButtonStyles()
         this.removeMenu()
     }
@@ -274,6 +276,7 @@ export class Comment {
 
         // fill in the info
         const commentDiv = ctc.querySelector(".comment-outer")
+        this.commentDiv = commentDiv
         commentDiv.querySelector(".comment-username").textContent = this.username;
         commentDiv.querySelector(".comment-score").textContent = this.score;
         //ctc.querySelector(".comment-time").textContent = this.timeSincePost TODO: fill in
@@ -295,6 +298,7 @@ export class Comment {
         // add actions TODO: Add username clicked action & menu actions
         commentDiv.addEventListener("farLeftSwipe", () => this.downvote())
         commentDiv.addEventListener("leftSwipe", () => this.upvote())
+        commentDiv.addEventListener("click", () => this.collapseComment())
         //commentDiv.addEventListener("farRightSwipe", () => this.reply()) // TODO: Add reply and collapse functions
         //commentDiv.addEventListener("rightSwipe", () => this.collapseToTop())
 
@@ -302,6 +306,10 @@ export class Comment {
         document.querySelector(".comments").appendChild(ctc)
 
         this.updateIconStyle()
+    }
+
+    collapseComment(){
+        this.commentDiv.classList.add("collapse-top")
     }
 
     removeMenu(){
