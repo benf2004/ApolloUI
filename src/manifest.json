@@ -7,7 +7,7 @@
   "orientation": "portrait-primary",
   "scope": "/",
   "short_name": "Foopollo",
-  "start_url": "/",
+  "start_url": ".",
   "theme_color": "#ffffff",
   "categories": [
     "social"
@@ -22,7 +22,7 @@
   "shortcuts": [
     {
       "name": "A test shortcut",
-      "url": "https://apollo.phooey.foo",
+      "url": "/",
       "description": "Home"
     }
   ],
