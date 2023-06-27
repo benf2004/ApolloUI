@@ -120,6 +120,13 @@
             </div>
         </div>
     </template>
+
+    <script>
+        if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('sw.js')
+        }
+    </script>
+
     <script src="js/external/snoowrapv1.min.js"></script>
     <script src="index/main.js" type="module"></script>
     <script src="js/external/slip.js"></script>
