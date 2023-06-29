@@ -6,3 +6,4 @@ function getCodeFromURI() {
 }
 
 getInitialToken(getCodeFromURI())
+setTimeout(() => document.getElementById("redirect").style.display = "block", 3000)
