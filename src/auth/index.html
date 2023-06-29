@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Authenticate</title>
+
+    <link href="auth.css" rel="stylesheet">
 </head>
 <body>
 
@@ -18,9 +20,34 @@
 
     <p>User Agent</p>
     <p><input type="text" id="user-agent"></p>
+
+    <button id="authorize">Authorize</button>
 </div>
 
-<button id="authorize">Authorize</button>
+<div>
+    <p>
+        Instructions:
+        <ol>
+            <li>Go to the <a href="https://www.reddit.com/prefs/apps">Reddit app creation page</a>.</li>
+            <li>Click on "create an app"</li>
+            <li>Name it whatever you want</li>
+            <li>Select "web app"</li>
+            <li>Write a description "doing research" or "testing an app" etc</li>
+            <li>Put an about URL (doesn't really matter)</li>
+            <li>Copy the redirect URI from above into the redirect URI box (these HAVE to match)</li>
+            <li>Click "create app"</li>
+            <li>Paste the string of text under "web app" into the Client ID box.</li>
+            <li>Paste the random string of text next to "secret" into the Client Secret box</li>
+            <li>Make a user-agent (this is what reddit will identify your app as)</li>
+            <li>Click "authorize", sign in to reddit, and you're good to go!</li>
+        </ol>
+    </p>
+    <p>
+        <strong>Note: we do not condone breaking the Reddit API terms. You should only use this for noncommercial
+        or research purposes.</strong>
+    </p>
+</div>
+
 
 <script src="../js/external/snoowrapv1.min.js"></script>
 <script src="setAuthToken.js" type="module"></script>
