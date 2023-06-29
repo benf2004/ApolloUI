@@ -118,6 +118,7 @@ export default class Post {
             return;
         }
         topNode.classList.add('bg-lightgray')
+        setTimeout(() => topNode.classList.remove("bg-lightgray"), 50)
         localStorage.setItem(this.id, JSON.stringify(this))
         let url = `${host}/post/?postid=${this.id}`
         console.log(url)
